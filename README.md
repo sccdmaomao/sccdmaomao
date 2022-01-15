@@ -18,7 +18,7 @@ Clone the repository and run:
     yarn install && yarn dev
 
 
-The project should be running at [localhost:8001].
+The project should be running at [localhost:8000].
 
 ## Tech Stack
 

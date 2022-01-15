@@ -1,21 +1,13 @@
-import styled from '@emotion/styled'
 import React from 'react'
-import Bio from './Bio'
-import Contact from './Contact'
-import Work from './Work'
+import { Route, Routes } from 'react-router-dom'
 
-const PaddedDiv = styled('div')({
-    paddingTop: '50px'
-})
-
-const RoutesWrapper: React.FunctionComponent<{ never }> = () => {
+const MyRoutes: React.FC = () => {
     return (
-        <PaddedDiv>
-            <Bio />
-            <Work />
-            <Contact />
-        </PaddedDiv>
+        <Routes>
+            <Route path="/" element={<MyComponent />} />
+        </Routes>
     )
 }
 
-export default RoutesWrapper
+const MyComponent = () => <div>hi</div>
+export default MyRoutes

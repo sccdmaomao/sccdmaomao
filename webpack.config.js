@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './src/index.html',
@@ -11,7 +10,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 module.exports = {
     entry: ['@babel/polyfill', './src/index.tsx'],
     output: {
-        publicPath: '/sccdmaomao',
+        publicPath: '/',
         filename: 'bundle.js',
         path: __dirname + '/dist'
     },
@@ -26,7 +25,7 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    {loader: 'babel-loader'},
+                    { loader: 'babel-loader' },
                     {
                         loader: 'ts-loader'
                     }
@@ -65,12 +64,10 @@ module.exports = {
         ]
     },
     plugins: [
-        HtmlWebpackPluginConfig,
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
+        HtmlWebpackPluginConfig
     ],
     devServer: {
-        historyApiFallback: true,
-        disableHostCheck: true,
-        inline: true
+        port: 8000,
+        historyApiFallback: true
     }
 }

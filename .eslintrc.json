@@ -5,9 +5,18 @@
     ],
     "extends": [
       "eslint:recommended",
+      "plugin:import/recommended",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended"
     ],
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".ts", ".tsx"]
+      },
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
     "rules":{
       "prettier/prettier": "error",
       "@typescript-eslint/no-explicit-any": "off",
