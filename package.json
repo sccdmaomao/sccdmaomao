@@ -36,6 +36,9 @@
         }
     },
     "dependencies": {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/material": "^5.4.0",
         "lodash.get": "^4.4.2",
         "lodash.isempty": "^4.4.0",
         "lodash.replace": "^4.1.4",
