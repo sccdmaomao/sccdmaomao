@@ -11,7 +11,6 @@ module.exports = {
             '<rootDir>/__test__/__mocks__/assetsTransformer.js',
         '\\.(s?css)$': 'identity-obj-proxy'
     },
-    setupFiles: ['raf/polyfill'],
     globals: {
         'ts-jest': {
             useBabelrc: true
