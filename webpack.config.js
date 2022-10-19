@@ -33,16 +33,6 @@ module.exports = {
                 include: path.resolve('src')
             },
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    cacheDirectory: true,
-                    plugins: ['transform-runtime'],
-                    presets: ['es2015', 'react', 'stage-0']
-                }
-            },
-            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
@@ -56,10 +46,6 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
-                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: 'url-loader?limit=10000&mimetype=application/fontwoff'
             }
         ]
     },
