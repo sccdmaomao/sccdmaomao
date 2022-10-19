@@ -3,14 +3,14 @@ jobs:
     checkout:
         working_directory: ~/repo
         docker:
-            - image: circleci/node:latest
+            - image: circleci/node:16.17.1
         steps:
             - checkout:
                   path: ~/repo
     unit_test:
         working_directory: ~/repo/
         docker:
-            - image: circleci/node:latest
+            - image: circleci/node:16.17.1
         steps:
             - checkout
             - restore_cache:
