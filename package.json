@@ -11,6 +11,7 @@
     "test": "jest --passWithNoTests",
     "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack --progress --color",
     "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack --color",
+    "build:prod:windows": "cross-env NODE_ENV=production PLATFORM=web webpack --color",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx  --fix",
     "deploy": "yarn build:prod:quiet && ./node_modules/.bin/git-directory-deploy --directory dist"
@@ -35,6 +36,7 @@
     "@babel/preset-typescript": "^7.18.6",
     "@tsconfig/recommended": "^1.0.1",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",

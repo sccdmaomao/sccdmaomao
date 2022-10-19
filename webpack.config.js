@@ -14,7 +14,7 @@ module.exports = {
         filename: 'bundle.js',
         path: __dirname + '/dist'
     },
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : false,
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
         extensions: ['.ts', '.tsx', '.js', '.json', 'css']
