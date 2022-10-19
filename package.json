@@ -9,8 +9,8 @@
     "dev": "webpack-dev-server --mode development",
     "compile": "webpack",
     "test": "jest --passWithNoTests",
-    "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack -p --progress --display-error-details --color",
-    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack -p --display-error-details --color",
+    "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack --progress --display-error-details --color",
+    "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack --display-error-details --color",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx  --fix",
     "deploy": "yarn build:prod:quiet && ./node_modules/.bin/git-directory-deploy --directory dist"
