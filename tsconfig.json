@@ -9,8 +9,8 @@
     "jsx": "react",
     "moduleResolution": "node",
     "lib": ["es6", "es7", "dom"],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noImplicitAny": false,
   },
   "exclude": ["node_modules"]
