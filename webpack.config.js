@@ -10,7 +10,6 @@ const isDev = process.env.NODE_ENV !== 'production'
 module.exports = {
     entry: ['@babel/polyfill', './src/index.tsx'],
     output: {
-        publicPath: '/',
         filename: 'bundle.js',
         path: __dirname + '/dist'
     },
