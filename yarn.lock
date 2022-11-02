@@ -5437,10 +5437,10 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-horizontal-scrolling-menu@^3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-3.2.2.tgz#05fb020a3b7e8a847149cde2e7c60f10f89d05da"
-  integrity sha512-5d8jzuumr0MBMnEiTb1FL82/4fl5eAoga7h0qP266MY4uIQxI39MUEUdJasfgf35HUhBiMUsaVHJb2AuCpHBKw==
+react-horizontal-scrolling-menu@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-3.2.3.tgz#b98e555c533329e32283e5d0eaf403f65371ed1f"
+  integrity sha512-23uR9+/1mYgvOxpR5tx99F8fQmRrPOO4NsHeZJsMLQtsksZZ4sGFCWxxUMZMgFaLROHM/oKj4y3IHyFyHsUGXA==
   dependencies:
     smooth-scroll-into-view-if-needed "^1.1.32"
 
