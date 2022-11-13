@@ -9,12 +9,8 @@ const PageWrapper = styled.div`
     flex-direction: column;
     align-items: center; // horizontal center
 
-    /* Full screen */
-    height: 100vh;
-    width: 100vw;
     background-color: #415a77;
     color: white;
-    position: fixed;
 `
 
 const TopHeaderWrapper = styled.div`
@@ -31,7 +27,7 @@ const ContentWrapper = styled.div`
 
 const MainPage: React.FC = () => {
     const scrollRef: React.RefObject<HTMLDivElement> = useHorizontalScroll()
-
+    const scrollRef2: React.RefObject<HTMLDivElement> = useHorizontalScroll()
     return (
         <PageWrapper>
             <ContentWrapper>
@@ -52,6 +48,33 @@ const MainPage: React.FC = () => {
                                 </Card>
                             ))}
                     </ScrollWrapper>
+                </div>
+
+                {/* Projects Section */}
+                <div>
+                    <h1>Projects</h1>
+                    <ScrollWrapper ref={scrollRef2}>
+                        {Array(20)
+                            .fill(1)
+                            .map((item, index) => (
+                                <Card key={index}>
+                                    <h2>{index}</h2>
+                                </Card>
+                            ))}
+                    </ScrollWrapper>
+                </div>
+
+                {/* Media Section */}
+                <div>
+                    <h1>Media</h1>
+                    {/* linked in, github */}
+                    {Array(20)
+                        .fill(1)
+                        .map((item, index) => (
+                            <Card key={index}>
+                                <h2>{index}</h2>
+                            </Card>
+                        ))}
                 </div>
             </ContentWrapper>
         </PageWrapper>

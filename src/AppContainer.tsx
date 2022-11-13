@@ -6,19 +6,24 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainPage from 'routes/MainPage'
 import Playground from 'routes/Playground'
 
+export enum PATH {
+    ROOT = '/',
+    PLAYGROUND = 'playground',
+}
+
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: PATH.ROOT,
         element: <NavBar />,
         children: [
             {
-                path: '/',
+                path: PATH.ROOT,
                 element: <MainPage />,
             },
         ],
         errorElement: <div>404</div>,
     },
-    { path: '/playground', element: <Playground /> },
+    { path: PATH.PLAYGROUND, element: <Playground /> },
 ])
 const AppContainer: React.FC = () => {
     return <RouterProvider router={router} />

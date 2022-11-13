@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 
+import PlaygroundEntrance from './PlaygroundEntrance'
+
 const InvisibleNav = styled.nav`
     display: none;
 `
@@ -22,6 +24,7 @@ const NavBar: React.FC = () => {
                     </li>
                 </ul>
             </InvisibleNav>
+            <PlaygroundEntrance />
             <Outlet />
         </div>
     )
