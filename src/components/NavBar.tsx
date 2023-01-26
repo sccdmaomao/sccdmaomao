@@ -1,6 +1,6 @@
 import { ROUTE_PATH } from 'AppContainer'
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 const BACKGROUND_COLOR = '#edebeb'
@@ -26,10 +26,12 @@ const Nav = styled.nav`
         align-items: center;
 
         & > li {
+            user-select: none;
             margin-right: 1em;
             border-left: 1px solid black;
             padding-left: 1em;
             & > a {
+                color: black;
                 text-decoration: none;
             }
         }
@@ -50,11 +52,19 @@ const GuohaoLink = styled(Link)`
     > h3 {
         display: inline-block;
         font-size: 2em;
-        color: black;
+    }
+`
+
+const SubPageLink = styled.li<{ selected?: boolean }>`
+    font-weight: ${({ selected }) => selected && 'bold'};
+    :hover {
+        font-weight: bold;
     }
 `
 
 const NavBar: React.FC = () => {
+    const { pathname } = useLocation()
+
     return (
         <PageRoot>
             <Nav>
@@ -63,17 +73,23 @@ const NavBar: React.FC = () => {
                         <GuohaoLink to={ROUTE_PATH.ROOT}>
                             <h3>Guohao Yan</h3>
                         </GuohaoLink>
-                        <desc>Software Engineer</desc>
+                        <span>Software Engineer</span>
                     </li>
-                    <li>
+                    <SubPageLink
+                        selected={pathname.includes(ROUTE_PATH.RESUME)}
+                    >
                         <Link to={ROUTE_PATH.RESUME}>Resume</Link>
-                    </li>
-                    <li>
+                    </SubPageLink>
+                    <SubPageLink
+                        selected={pathname.includes(ROUTE_PATH.PROJECTS)}
+                    >
                         <Link to={ROUTE_PATH.PROJECTS}>Projects</Link>
-                    </li>
-                    <li>
+                    </SubPageLink>
+                    <SubPageLink
+                        selected={pathname.includes(ROUTE_PATH.CONTACTS)}
+                    >
                         <Link to={ROUTE_PATH.CONTACTS}>Contact</Link>
-                    </li>
+                    </SubPageLink>
                 </ul>
             </Nav>
             <Outlet />

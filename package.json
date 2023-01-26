@@ -7,15 +7,16 @@
   "license": "MIT",
   "homepage": "https://sccdmaomao.github.io/sccdmaomao/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "webpack-dev-server --mode development",
     "compile": "webpack",
     "test": "jest --passWithNoTests",
-    "build:prod": "rm -rf ./dist & NODE_ENV=production PLATFORM=web webpack --progress --color",
+    "build": "react-scripts build",
     "build:prod:quiet": "NODE_ENV=production PLATFORM=web webpack --color",
     "build:prod:windows": "cross-env NODE_ENV=production PLATFORM=web webpack --color",
     "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint . --ext .ts,.tsx  --fix",
-    "deploy": "yarn build:prod:quiet && ./node_modules/.bin/git-directory-deploy --directory dist"
+    "lint:fix": "eslint . --ext .ts,.tsx  --fix"
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
@@ -71,15 +72,29 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-horizontal-scrolling-menu": "^3.2.3",
     "react-router-dom": "^6.4.3",
+    "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.5",
     "styled-components": "^5.3.6",
     "typescript": "*"
   },
   "resolutions": {
     "styled-components": "^5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
