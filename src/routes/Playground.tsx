@@ -1,3 +1,4 @@
+import { ROUTE_PATH } from 'AppContainer'
 import Animation from 'components/Animation'
 import React from 'react'
 import { Link } from 'react-router-dom'
@@ -25,7 +26,7 @@ const Playground = () => {
     }
     return (
         <div>
-            <h1>Playground</h1> <Link to={'/'}>Back</Link>
+            <h1>Playground</h1> <Link to={ROUTE_PATH.ROOT}>Back</Link>
             {renderElements()}
         </div>
     )

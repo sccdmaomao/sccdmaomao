@@ -1,4 +1,4 @@
-import { PATH } from 'AppContainer'
+import { ROUTE_PATH } from 'AppContainer'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -26,7 +26,7 @@ const StyledLink = styled(Link)`
 const PlaygroundEntrance = () => {
     return (
         <FloatingWrapper>
-            <StyledLink to={PATH.PLAYGROUND}>playground</StyledLink>
+            <StyledLink to={ROUTE_PATH.PLAYGROUND}>playground</StyledLink>
         </FloatingWrapper>
     )
 }

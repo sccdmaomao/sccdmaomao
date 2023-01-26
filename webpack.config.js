@@ -1,9 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './src/index.html',
     filename: 'index.html',
-    inject: 'body'
+    inject: 'body',
 })
 
 const isDev = process.env.NODE_ENV !== 'production'
@@ -11,12 +12,12 @@ module.exports = {
     entry: ['@babel/polyfill', './src/index.tsx'],
     output: {
         filename: 'bundle.js',
-        path: __dirname + '/dist'
+        path: path.join(__dirname, '/dist'),
     },
     devtool: isDev ? 'source-map' : false,
     resolve: {
         modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-        extensions: ['.ts', '.tsx', '.js', '.json', 'css']
+        extensions: ['.ts', '.tsx', '.js', '.json', 'css'],
     },
     mode: isDev ? 'development' : 'production',
     module: {
@@ -26,14 +27,14 @@ module.exports = {
                 use: [
                     { loader: 'babel-loader' },
                     {
-                        loader: 'ts-loader'
-                    }
+                        loader: 'ts-loader',
+                    },
                 ],
-                include: path.resolve('src')
+                include: path.resolve('src'),
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.jpe?g$|\.gif$|\.png$|\.ttf$|\.eot$|\.svg$/,
@@ -41,18 +42,16 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            outputPath: 'assets'
-                        }
-                    }
-                ]
-            }
-        ]
+                            outputPath: 'assets',
+                        },
+                    },
+                ],
+            },
+        ],
     },
-    plugins: [
-        HtmlWebpackPluginConfig
-    ],
+    plugins: [HtmlWebpackPluginConfig],
     devServer: {
         port: 8000,
-        historyApiFallback: true
-    }
+        historyApiFallback: true,
+    },
 }
