@@ -2,7 +2,7 @@ import './global.css'
 
 import NavBar from 'components/NavBar'
 import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from 'routes/LandingPage'
 import Playground from 'routes/Playground'
 
@@ -14,7 +14,7 @@ export enum ROUTE_PATH {
     PLAYGROUND = 'playground',
 }
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: ROUTE_PATH.ROOT,
         element: <NavBar />,

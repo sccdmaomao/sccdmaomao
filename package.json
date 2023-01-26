@@ -5,6 +5,7 @@
   "repository": "https://github.com/sccdmaomao/sccdmaomao.git",
   "author": "guohao.yan <sccdmaomao@hotmail.com>",
   "license": "MIT",
+  "homepage": "https://sccdmaomao.github.io/sccdmaomao/",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "compile": "webpack",
