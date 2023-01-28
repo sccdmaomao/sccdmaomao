@@ -2,21 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import text from 'text/LandingPageText'
 
-const PageWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-`
-
-const ContentWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;
-`
+import { ContentWrapper, PageWrapper } from './CommonStyles'
 
 const TextWrapper = styled.div``
 

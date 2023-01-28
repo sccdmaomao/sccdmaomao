@@ -2,6 +2,7 @@ import { ROUTE_PATH } from 'AppContainer'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
+import navText from 'text/NavigationText'
 
 const BACKGROUND_COLOR = '#edebeb'
 
@@ -74,9 +75,11 @@ const NavBar: React.FC = () => {
                 <ul>
                     <li>
                         <GuohaoLink to={ROUTE_PATH.ROOT}>
-                            <h3>Guohao Yan</h3>
+                            <h3>{navText.name}</h3>
                         </GuohaoLink>
-                        <span>Software Engineer</span>
+                        <span>
+                            {navText.title} @ {navText.company}
+                        </span>
                     </li>
                     <SubPageLink
                         selected={pathname.includes(ROUTE_PATH.RESUME)}
