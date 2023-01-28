@@ -8,16 +8,19 @@ const BACKGROUND_COLOR = '#edebeb'
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLOR};
     color: black;
-    padding: 2em 6em;
-    height: calc(
-        100vh - 4em
-    ); // We want a full height single page, minus the 4em padding
     font-family: 'Montserrat', sans-serif;
 `
 
+const OutletWrapper = styled.div`
+    padding: 2em 6em;
+    height: calc(100vh - 4em); // Minus Padding on top and bottom
+`
+
 const Nav = styled.nav`
+    position: fixed;
     height: 5vh;
-    margin-bottom: 2em;
+    margin: 0 6em;
+    width: calc(100vw - 12em); // minus margin on left and right
     & > ul {
         margin: 0;
         padding: 0;
@@ -92,7 +95,9 @@ const NavBar: React.FC = () => {
                     </SubPageLink>
                 </ul>
             </Nav>
-            <Outlet />
+            <OutletWrapper>
+                <Outlet />
+            </OutletWrapper>
         </PageRoot>
     )
 }

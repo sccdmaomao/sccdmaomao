@@ -9,7 +9,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "dev": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development",
     "compile": "webpack",
     "test": "jest --passWithNoTests",
     "build": "react-scripts build",
