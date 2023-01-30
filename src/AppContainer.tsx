@@ -5,7 +5,6 @@ import React from 'react'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import ContactsPage from 'routes/ContactsPage'
 import LandingPage from 'routes/LandingPage'
-import Playground from 'routes/Playground'
 import ProjectPage from 'routes/ProjectPage'
 import ResumePage from 'routes/ResumePage'
 
@@ -41,7 +40,6 @@ const router = createHashRouter([
         ],
         errorElement: <div>404</div>,
     },
-    { path: ROUTE_PATH.PLAYGROUND, element: <Playground /> },
 ])
 const AppContainer: React.FC = () => {
     return <RouterProvider router={router} />

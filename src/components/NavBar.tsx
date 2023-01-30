@@ -4,7 +4,8 @@ import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import navText from 'text/NavigationText'
 
-const BACKGROUND_COLOR = '#edebeb'
+export const BACKGROUND_COLOR = '#edebeb'
+export const NAV_HEIGHT = '5vh'
 
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLOR};
@@ -19,7 +20,7 @@ const OutletWrapper = styled.div`
 
 const Nav = styled.nav`
     position: fixed;
-    height: 5vh;
+    height: ${NAV_HEIGHT};
     margin: 0 6em;
     width: calc(100vw - 12em); // minus margin on left and right
     & > ul {
@@ -55,7 +56,7 @@ const GuohaoLink = styled(Link)`
     margin-right: 1em;
     > h3 {
         display: inline-block;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 `
 

@@ -1,17 +1,11 @@
+import { NAV_HEIGHT } from 'components/NavBar'
 import styled from 'styled-components'
 
-export const PageWrapper = styled.div`
+export const PageWrapper = styled.div<{ centerAlign?: boolean }>`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 100%;
-`
-
-export const ContentWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    max-width: 900px;
+    margin: 0 10%;
+    margin-top: ${NAV_HEIGHT};
+    justify-content: ${(props) => (props.centerAlign ? 'center' : '')};
+    align-items: ${(props) => (props.centerAlign ? 'center' : '')};
 `

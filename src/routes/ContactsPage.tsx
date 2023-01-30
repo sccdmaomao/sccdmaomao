@@ -1,14 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ContentWrapper, PageWrapper } from './CommonStyles'
+import { PageWrapper } from './CommonStyles'
 
 const ContactsPage: React.FC = () => {
-    return (
-        <PageWrapper>
-            <ContentWrapper>ContactsPage</ContentWrapper>
-        </PageWrapper>
-    )
+    return <PageWrapper>ContactsPage</PageWrapper>
 }
 
 export default ContactsPage

@@ -2,7 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import text from 'text/LandingPageText'
 
-import { ContentWrapper, PageWrapper } from './CommonStyles'
+import { PageWrapper } from './CommonStyles'
+
+const ContentWrapper = styled.div`
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
 const TextWrapper = styled.div``
 
@@ -16,7 +23,7 @@ const FakeImg = styled.img`
 
 const LandingPage: React.FC = () => {
     return (
-        <PageWrapper>
+        <PageWrapper centerAlign={true}>
             <ContentWrapper>
                 <FakeImg src="https://fakeimg.pl/300/"></FakeImg>
                 <TextWrapper>
