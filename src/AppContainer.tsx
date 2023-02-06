@@ -9,11 +9,12 @@ import ProjectPage from 'routes/ProjectPage'
 import ResumePage from 'routes/ResumePage'
 import { createGlobalStyle } from 'styled-components'
 
-export const BACKGROUND_COLOR = '#edebeb'
+import { BACKGROUND_COLORS } from './colors'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background-color: ${BACKGROUND_COLOR}
+    font-family: 'Montserrat', sans-serif;
+    background-color: ${BACKGROUND_COLORS.PAGE}
   }
 `
 

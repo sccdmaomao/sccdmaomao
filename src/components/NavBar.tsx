@@ -1,28 +1,32 @@
-import { BACKGROUND_COLOR, ROUTE_PATH } from 'AppContainer'
+import { BACKGROUND_COLORS } from 'colors'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import navText from 'text/NavigationText'
 
-export const NAV_HEIGHT = '5vh'
+import { ROUTE_PATH } from '../AppContainer'
+
+export const NAV_HEIGHT = '8vh'
 
 const PageRoot = styled.div`
-    background-color: ${BACKGROUND_COLOR};
-    color: black;
-    /* font-family: 'Montserrat', sans-serif; */
+    background-color: ${BACKGROUND_COLORS.PAGE};
 `
 
 const OutletWrapper = styled.div`
-    padding: 2em 6em;
+    padding: 0 6em;
+    margin-top: ${NAV_HEIGHT};
     height: calc(100vh - 4em); // Minus Padding on top and bottom
 `
 
 const Nav = styled.nav`
     position: fixed;
-    height: ${NAV_HEIGHT};
-    margin: 0 6em;
-    width: calc(100vw - 12em); // minus margin on left and right
+    top: 0;
+    padding: 0 6em;
+    width: calc(100% - 12em);
+    background-color: ${BACKGROUND_COLORS.NAV};
+
     & > ul {
+        height: ${NAV_HEIGHT};
         margin: 0;
         padding: 0;
         list-style: none;
@@ -57,6 +61,7 @@ const GuohaoLink = styled(Link)`
     > h3 {
         display: inline-block;
         font-size: 1.5em;
+        margin: 0;
     }
 `
 
