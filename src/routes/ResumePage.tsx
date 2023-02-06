@@ -16,6 +16,10 @@ const ResumePage: React.FC = () => {
             <ContentWrapper>
                 <PageTitle titleText={ResumePageText.title} />
                 <ResumeSection sectionTitle={'Work Experience'} />
+                <hr />
+                <ResumeSection sectionTitle={'Education'} />
+                <hr />
+                <ResumeSection sectionTitle={'Skills and Expertise'} />
             </ContentWrapper>
         </PageWrapper>
     )

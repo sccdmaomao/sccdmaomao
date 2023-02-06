@@ -1,10 +1,9 @@
-import { ROUTE_PATH } from 'AppContainer'
+import { BACKGROUND_COLOR, ROUTE_PATH } from 'AppContainer'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import navText from 'text/NavigationText'
 
-export const BACKGROUND_COLOR = '#edebeb'
 export const NAV_HEIGHT = '5vh'
 
 const PageRoot = styled.div`
@@ -44,6 +43,7 @@ const Nav = styled.nav`
         & > li:first-child {
             flex-grow: 1;
         }
+        /* No border style for First and Second route link */
         & > li:first-child,
         li:nth-child(2) {
             border: none;

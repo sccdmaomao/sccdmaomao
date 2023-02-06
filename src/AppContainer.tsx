@@ -7,6 +7,15 @@ import ContactsPage from 'routes/ContactsPage'
 import LandingPage from 'routes/LandingPage'
 import ProjectPage from 'routes/ProjectPage'
 import ResumePage from 'routes/ResumePage'
+import { createGlobalStyle } from 'styled-components'
+
+export const BACKGROUND_COLOR = '#edebeb'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${BACKGROUND_COLOR}
+  }
+`
 
 export enum ROUTE_PATH {
     ROOT = '/',
@@ -42,7 +51,12 @@ const router = createHashRouter([
     },
 ])
 const AppContainer: React.FC = () => {
-    return <RouterProvider router={router} />
+    return (
+        <>
+            <GlobalStyle />
+            <RouterProvider router={router} />
+        </>
+    )
 }
 
 export default AppContainer
