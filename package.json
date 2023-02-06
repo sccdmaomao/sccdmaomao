@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "yarn lint",
+      "npm run lint",
       "prettier --write",
       "git add"
     ]
@@ -63,8 +63,7 @@
     "ts-loader": "^9.4.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1",
-    "yarn": "^1.22.19"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "@fontsource/roboto": "^4.5.8",
