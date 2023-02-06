@@ -1,10 +1,10 @@
-import { ROUTE_PATH } from 'AppContainer'
+import { BACKGROUND_COLOR, ROUTE_PATH } from 'AppContainer'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import navText from 'text/NavigationText'
 
-const BACKGROUND_COLOR = '#edebeb'
+export const NAV_HEIGHT = '5vh'
 
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLOR};
@@ -19,7 +19,7 @@ const OutletWrapper = styled.div`
 
 const Nav = styled.nav`
     position: fixed;
-    height: 5vh;
+    height: ${NAV_HEIGHT};
     margin: 0 6em;
     width: calc(100vw - 12em); // minus margin on left and right
     & > ul {
@@ -43,6 +43,7 @@ const Nav = styled.nav`
         & > li:first-child {
             flex-grow: 1;
         }
+        /* No border style for First and Second route link */
         & > li:first-child,
         li:nth-child(2) {
             border: none;
@@ -55,7 +56,7 @@ const GuohaoLink = styled(Link)`
     margin-right: 1em;
     > h3 {
         display: inline-block;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 `
 
