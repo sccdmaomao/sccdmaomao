@@ -9,7 +9,7 @@ const BACKGROUND_COLOR = '#edebeb'
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLOR};
     color: black;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
 `
 
 const OutletWrapper = styled.div`
