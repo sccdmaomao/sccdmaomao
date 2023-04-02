@@ -10,17 +10,21 @@ export const NAV_HEIGHT = '8vh'
 
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLORS.PAGE};
+    max-height: 100vh;
+    overflow: hidden;
+`
+
+const ScrollWrapper = styled.div`
+    overflow: auto;
+    height: calc(100vh - ${NAV_HEIGHT});
 `
 
 const OutletWrapper = styled.div`
     padding: 0 6em;
-    margin-top: ${NAV_HEIGHT};
-    height: calc(100vh - 4em); // Minus Padding on top and bottom
+    height: 100%;
 `
 
 const Nav = styled.nav`
-    position: fixed;
-    top: 0;
     padding: 0 6em;
     width: calc(100% - 12em);
     background-color: ${BACKGROUND_COLORS.NAV};
@@ -104,9 +108,11 @@ const NavBar: React.FC = () => {
                     </SubPageLink>
                 </ul>
             </Nav>
-            <OutletWrapper>
-                <Outlet />
-            </OutletWrapper>
+            <ScrollWrapper>
+                <OutletWrapper>
+                    <Outlet />
+                </OutletWrapper>
+            </ScrollWrapper>
         </PageRoot>
     )
 }
