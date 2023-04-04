@@ -4,6 +4,7 @@ import NavBar from 'components/NavBar'
 import React from 'react'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import ContactsPage from 'routes/ContactsPage'
+import ErrorPage from 'routes/ErrorPage'
 import LandingPage from 'routes/LandingPage'
 import ProjectPage from 'routes/ProjectPage'
 import ResumePage from 'routes/ResumePage'
@@ -48,7 +49,7 @@ const router = createHashRouter([
                 element: <ContactsPage />,
             },
         ],
-        errorElement: <div>404</div>,
+        errorElement: <ErrorPage />,
     },
 ])
 const AppContainer: React.FC = () => {

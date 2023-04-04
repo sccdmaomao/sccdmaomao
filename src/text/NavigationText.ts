@@ -1,5 +1,5 @@
 const text = {
-    name: 'Gouhao Yan',
+    name: 'Guohao Yan',
     title: 'Software Engineer',
     company: 'Autodesk',
 }

@@ -50,6 +50,9 @@ const Nav = styled.nav`
 
         & > li:first-child {
             flex-grow: 1;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
         }
         /* No border style for First and Second route link */
         & > li:first-child,

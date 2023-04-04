@@ -1,3 +1,4 @@
+import JobHistory from 'components/JobHistory'
 import PageTitle from 'components/PageTitle'
 import ResumeSection from 'components/ResumeSection'
 import React from 'react'
@@ -15,11 +16,13 @@ const ResumePage: React.FC = () => {
         <PageWrapper>
             <ContentWrapper>
                 <PageTitle titleText={ResumePageText.title} />
-                <ResumeSection sectionTitle={'Work Experience'} />
+                <ResumeSection sectionTitle={'Work Experience'}>
+                    <JobHistory />
+                </ResumeSection>
                 <hr />
-                <ResumeSection sectionTitle={'Education'} />
+                {/* <ResumeSection sectionTitle={'Education'} />
                 <hr />
-                <ResumeSection sectionTitle={'Skills and Expertise'} />
+                <ResumeSection sectionTitle={'Skills and Expertise'} /> */}
             </ContentWrapper>
         </PageWrapper>
     )
