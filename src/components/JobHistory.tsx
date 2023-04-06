@@ -1,3 +1,10 @@
+import {
+    Details,
+    LeftSection,
+    RightSection,
+    SubTitle,
+    Title,
+} from 'commonComponents/commonStyles'
 import getEmploymentLength from 'helpers/getEmploymentLength'
 import React from 'react'
 import styled from 'styled-components'
@@ -16,31 +23,8 @@ const JobDetailSectionWrapper = styled.div`
     }
 `
 
-const JobDetailSection = styled.div`
-    display: flex;
-    flex-direction: column;
-    max-width: 35em;
-`
-
-const JobTitle = styled.span`
-    font-weight: bold;
-`
-
-const CompanyName = styled.span`
-    font-size: 1.2em;
-`
-const JobDetails = styled.span`
-    white-space: pre-wrap;
-`
-
 const JobLinks = styled.a`
     text-decoration: none;
-`
-
-const EmploymentLengthSection = styled.div`
-    display: flex;
-    flex-direction: column;
-    min-width: 10em;
 `
 
 const JobHistory: React.FC<{}> = () => {
@@ -48,18 +32,18 @@ const JobHistory: React.FC<{}> = () => {
         <JobDetailList>
             {jobText.map((job, index) => (
                 <JobDetailSectionWrapper key={index}>
-                    <EmploymentLengthSection>
+                    <LeftSection>
                         <span>
                             {job.date.start} - {job.date.end ?? 'Now'}
                         </span>
                         <span>
                             {getEmploymentLength(job.date.start, job.date.end)}
                         </span>
-                    </EmploymentLengthSection>
-                    <JobDetailSection>
-                        <JobTitle>{job.jobTitle}</JobTitle>
-                        <CompanyName>{job.companyName}</CompanyName>
-                        <JobDetails>{job.details}</JobDetails>
+                    </LeftSection>
+                    <RightSection>
+                        <Title>{job.jobTitle}</Title>
+                        <SubTitle>{job.companyName}</SubTitle>
+                        <Details>{job.details}</Details>
                         {job.links?.map((link, index) => (
                             <div
                                 key={`${job.companyName}-link-${index}`}
@@ -74,7 +58,7 @@ const JobHistory: React.FC<{}> = () => {
                                 </JobLinks>
                             </div>
                         ))}
-                    </JobDetailSection>
+                    </RightSection>
                 </JobDetailSectionWrapper>
             ))}
         </JobDetailList>

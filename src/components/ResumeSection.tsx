@@ -14,9 +14,10 @@ const SectionTitle = styled.h3`
 const ResumeSection: React.FC<{
     sectionTitle: string
     children: React.ReactElement
-}> = ({ sectionTitle, children }) => {
+    styles?: React.CSSProperties
+}> = ({ sectionTitle, children, styles }) => {
     return (
-        <StyledSection>
+        <StyledSection style={styles}>
             <SectionTitle>{sectionTitle}</SectionTitle>
             {children}
         </StyledSection>

@@ -66,7 +66,11 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.11.16",
     "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
