@@ -80,9 +80,9 @@ jobs:
                   paths:
                       - ~/.cache/yarn
             - run:
-                  command: 'git config --global user.email "sccdmaomoa@hotmail.com'
+                  command: 'git config --global user.email "sccdmaomoa@hotmail.com"'
             - run:
-                  command: 'git config --global user.name "Guohao Yan'
+                  command: 'git config --global user.name "Guohao Yan"'
             - run:
                   name: Deploy
                   command: 'yarn deploy'
