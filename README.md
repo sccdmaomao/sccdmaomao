@@ -1,5 +1,5 @@
-###### Circle Build Status:
-[![CircleCI](https://circleci.com/gh/sccdmaomao/sccdmaomao.github.io.svg?style=svg)](https://circleci.com/gh/sccdmaomao/sccdmaomao.github.io)
+###### Build Status:
+[![Build and Deploy](https://github.com/sccdmaomao/sccdmaomao/actions/workflows/deploy.yml/badge.svg)](https://github.com/sccdmaomao/sccdmaomao/actions/workflows/deploy.yml)
 
 ## Development
 
