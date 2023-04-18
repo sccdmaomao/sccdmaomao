@@ -89,7 +89,7 @@ const NavBar: React.FC = () => {
                 <ul>
                     <li>
                         <GuohaoLink to={ROUTE_PATH.ROOT}>
-                            <h3>{navText.name}</h3>
+                            <h3>{navText.name} </h3>
                         </GuohaoLink>
                         <span>
                             {navText.title} @ {navText.company}
