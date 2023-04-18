@@ -9,7 +9,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "webpack-dev-server --mode development",
+    "start": "react-scripts start",
     "compile": "webpack",
     "test": "jest --passWithNoTests",
     "build": "react-scripts build",
@@ -70,6 +70,7 @@
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.127",
     "@mui/material": "^5.11.16",
     "gh-pages": "^5.0.0",
     "moment": "^2.29.4",

@@ -10,7 +10,7 @@ import Thumbnail from '../components/Thumbnail'
 
 const ProjectPage: React.FC = () => {
     return (
-        <Paper elevation={0}>
+        <Paper elevation={0} sx={{ paddingBottom: '40px' }}>
             <div>
                 <Typography variant="h4" marginTop={4}>
                     Small Projects
@@ -33,7 +33,7 @@ const ProjectPage: React.FC = () => {
                     ))}
                 </Grid>
                 <Typography variant="h4" marginTop={4}>
-                    React Projects
+                    React Specific Projects
                 </Typography>
                 <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
                     {reactProjectThumbnails.map((tb) => (

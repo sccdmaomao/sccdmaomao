@@ -103,7 +103,7 @@ const NavBar: React.FC = () => {
                     <SubPageLink
                         selected={pathname.includes(ROUTE_PATH.PROJECTS)}
                     >
-                        <Link to={ROUTE_PATH.PROJECTS}>Projects</Link>
+                        <Link to={ROUTE_PATH.PROJECTS}>Side Projects</Link>
                     </SubPageLink>
                     <SubPageLink
                         selected={pathname.includes(ROUTE_PATH.CONTACTS)}
