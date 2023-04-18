@@ -1,8 +1,7 @@
+import { Paper } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 import text from 'text/LandingPageText'
-
-import { PageWrapper } from './CommonStyles'
 
 const ContentWrapper = styled.div`
     max-width: 900px;
@@ -23,7 +22,15 @@ const FakeImg = styled.img`
 
 const LandingPage: React.FC = () => {
     return (
-        <PageWrapper centerAlign={true}>
+        <Paper
+            elevation={0}
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100%',
+            }}
+        >
             <ContentWrapper>
                 <FakeImg src="https://fakeimg.pl/300/"></FakeImg>
                 <TextWrapper>
@@ -31,7 +38,7 @@ const LandingPage: React.FC = () => {
                     <p>{text.introParagraph}</p>
                 </TextWrapper>
             </ContentWrapper>
-        </PageWrapper>
+        </Paper>
     )
 }
 

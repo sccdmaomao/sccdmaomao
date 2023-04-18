@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material'
 import Education from 'components/Education'
 import JobHistory from 'components/JobHistory'
 import PageTitle from 'components/PageTitle'
@@ -7,15 +8,13 @@ import React from 'react'
 import styled from 'styled-components'
 import ResumePageText from 'text/ResumePageText'
 
-import { PageWrapper } from './CommonStyles'
-
 const ContentWrapper = styled.div`
     width: 100%;
 `
 
 const ResumePage: React.FC = () => {
     return (
-        <PageWrapper>
+        <Paper elevation={0}>
             <ContentWrapper>
                 <PageTitle titleText={ResumePageText.title} />
                 <ResumeSection
@@ -35,7 +34,7 @@ const ResumePage: React.FC = () => {
 
                 <hr />
             </ContentWrapper>
-        </PageWrapper>
+        </Paper>
     )
 }
 

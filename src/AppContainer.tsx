@@ -1,5 +1,6 @@
 import './global.css'
 
+import { ThemeProvider } from '@mui/material'
 import NavBar from 'components/NavBar'
 import React from 'react'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
@@ -11,6 +12,7 @@ import ResumePage from 'routes/ResumePage'
 import { createGlobalStyle } from 'styled-components'
 
 import { BACKGROUND_COLORS } from './colors'
+import theme from './theme'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -52,11 +54,14 @@ const router = createHashRouter([
         errorElement: <ErrorPage />,
     },
 ])
+
 const AppContainer: React.FC = () => {
     return (
         <>
-            <GlobalStyle />
-            <RouterProvider router={router} />
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <RouterProvider router={router} />
+            </ThemeProvider>
         </>
     )
 }

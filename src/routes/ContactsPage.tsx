@@ -1,9 +1,8 @@
+import { Paper } from '@mui/material'
 import React from 'react'
 
-import { PageWrapper } from './CommonStyles'
-
 const ContactsPage: React.FC = () => {
-    return <PageWrapper>ContactsPage</PageWrapper>
+    return <Paper>ContactsPage</Paper>
 }
 
 export default ContactsPage

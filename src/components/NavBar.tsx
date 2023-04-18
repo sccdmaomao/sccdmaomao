@@ -46,6 +46,7 @@ const Nav = styled.nav`
                 color: black;
                 text-decoration: none;
             }
+            white-space: nowrap;
         }
 
         & > li:first-child {
