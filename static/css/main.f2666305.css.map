@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.f2666305.css","mappings":"AAAA,OACE,YACF,CAEA,KAEE,kBAAmB,CADnB,QAEF","sources":["global.css"],"sourcesContent":["*:focus {\n  outline: none;\n}\n\nbody {\n  margin: 0;\n  font-family: Roboto;\n}\n"],"names":[],"sourceRoot":""}
