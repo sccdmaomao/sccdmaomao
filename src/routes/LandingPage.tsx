@@ -18,6 +18,8 @@ const Title = styled.h1`
 const FakeImg = styled.img`
     margin: 20px;
     border-radius: 50%;
+    border: 1px solid black;
+    width: 300px;
 `
 
 const LandingPage: React.FC = () => {
@@ -32,7 +34,10 @@ const LandingPage: React.FC = () => {
             }}
         >
             <ContentWrapper>
-                <FakeImg src="https://fakeimg.pl/300/"></FakeImg>
+                <FakeImg
+                    src="https://guohao-public-assets.s3.ca-central-1.amazonaws.com/images/guohao-profile-pic.jpg"
+                    loading="lazy"
+                ></FakeImg>
                 <TextWrapper>
                     <Title>{text.title}</Title>
                     <p>{text.introParagraph}</p>

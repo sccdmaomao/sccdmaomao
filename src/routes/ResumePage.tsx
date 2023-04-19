@@ -1,12 +1,10 @@
 import { Paper } from '@mui/material'
 import Education from 'components/Education'
 import JobHistory from 'components/JobHistory'
-import PageTitle from 'components/PageTitle'
 import ResumeSection from 'components/ResumeSection'
 import SkillSummary from 'components/SkillSummary'
 import React from 'react'
 import styled from 'styled-components'
-import ResumePageText from 'text/ResumePageText'
 
 const ContentWrapper = styled.div`
     width: 100%;
@@ -16,7 +14,6 @@ const ResumePage: React.FC = () => {
     return (
         <Paper elevation={0}>
             <ContentWrapper>
-                <PageTitle titleText={ResumePageText.title} />
                 <ResumeSection
                     sectionTitle={'Skills and Expertise'}
                     styles={{ flexDirection: 'column' }}
