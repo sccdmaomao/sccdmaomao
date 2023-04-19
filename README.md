@@ -1,15 +1,15 @@
 ###### Build Status:
 [![Build and Deploy](https://github.com/sccdmaomao/sccdmaomao/actions/workflows/deploy.yml/badge.svg)](https://github.com/sccdmaomao/sccdmaomao/actions/workflows/deploy.yml)
 
-## Development
+## Local Development
 
-Clone the repository and run:
-
-
-    yarn install && yarn start
+Clone the repository and run (node v16):
 
 
-The project should be running at [localhost:8000].
+    npm install && npm start
+
+
+The project should be running at [localhost:3000].
 
 ## Tech Stack
 
@@ -23,6 +23,8 @@ Some technology choices applied in the project and their advantages.
 
 2. React
 
+       - Modern frontend development framework
+
 3. styled-components (CSS-in-JS)
 
        - Reuse possibilities
@@ -30,3 +32,5 @@ Some technology choices applied in the project and their advantages.
        - Easy to modify programmatically 
 
 4. Material UI
+
+       - Well design, tested component library for consistency look and feel
