@@ -34,14 +34,18 @@ const ContactsPage: React.FC = () => {
                 <IconButton
                     color="primary"
                     aria-label="linkedIn"
-                    onClick={() => handleIconClick('linkedIn')}
+                    onClick={() => {
+                        handleIconClick('linkedIn')
+                    }}
                 >
                     <LinkedInIcon sx={{ width: '100px', height: 'auto' }} />
                 </IconButton>
                 <IconButton
                     color="primary"
                     aria-label="linkedIn"
-                    onClick={() => handleIconClick('github')}
+                    onClick={() => {
+                        handleIconClick('github')
+                    }}
                 >
                     <GitHubIcon sx={{ width: '100px', height: 'auto' }} />
                 </IconButton>

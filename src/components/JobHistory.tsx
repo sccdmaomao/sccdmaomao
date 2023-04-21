@@ -27,7 +27,7 @@ const JobLinks = styled.a`
     text-decoration: none;
 `
 
-const JobHistory: React.FC<{}> = () => {
+const JobHistory: React.FC<unknown> = () => {
     return (
         <JobDetailList>
             {jobText.map((job, index) => (

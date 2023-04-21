@@ -1,4 +1,4 @@
-import { ThumbnailProps } from '../components/Thumbnail'
+import { type ThumbnailProps } from '../components/Thumbnail'
 
 export const smallProjectThumbnails: ThumbnailProps[] = [
     {

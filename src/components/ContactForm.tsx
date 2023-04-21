@@ -80,7 +80,9 @@ const ContactForm = () => {
                         label="Name"
                         variant="outlined"
                         value={name}
-                        onChange={(event) => setName(event.target.value)}
+                        onChange={(event) => {
+                            setName(event.target.value)
+                        }}
                         required
                     />
                     <TextField
@@ -88,7 +90,9 @@ const ContactForm = () => {
                         variant="outlined"
                         type="email"
                         value={email}
-                        onChange={(event) => setEmail(event.target.value)}
+                        onChange={(event) => {
+                            setEmail(event.target.value)
+                        }}
                         required
                     />
                     <TextField
@@ -97,7 +101,9 @@ const ContactForm = () => {
                         multiline
                         rows={4}
                         value={message}
-                        onChange={(event) => setMessage(event.target.value)}
+                        onChange={(event) => {
+                            setMessage(event.target.value)
+                        }}
                         required
                     />
                     <div>

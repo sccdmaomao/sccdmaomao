@@ -25,7 +25,11 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
     }
     return (
         <Card sx={{ width: 320 }}>
-            <CardActionArea onClick={() => handleClick(href)}>
+            <CardActionArea
+                onClick={() => {
+                    handleClick(href)
+                }}
+            >
                 <CardMedia
                     sx={{
                         height: 180,
