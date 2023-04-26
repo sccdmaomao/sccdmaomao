@@ -70,7 +70,7 @@
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
-    "@mui/lab": "^5.0.0-alpha.127",
+    "@mui/lab": "^5.0.0-alpha.128",
     "@mui/material": "^5.12.1",
     "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
