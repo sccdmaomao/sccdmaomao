@@ -16,9 +16,10 @@ const ContactForm = () => {
     const [toastOpen, setToastOpen] = useState(false)
     const [sendSuccess, setSendSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
-    const apiKey = process.env.REACT_APP_AWS_API_GATEWAY_KEY
-    const fromEmail = process.env.REACT_APP_TO_EMAIL_ADDRESS
-    const toEmail = process.env.REACT_APP_FROM_EMAIL_ADDRESS
+    const fromEmail =
+        process.env.REACT_APP_TO_EMAIL_ADDRESS ?? 'alexyan1994@gmail.com'
+    const toEmail =
+        process.env.REACT_APP_FROM_EMAIL_ADDRESS ?? 'alexyan1994@gmail.com'
 
     const handleToastClose = () => {
         setToastOpen(false)
@@ -34,8 +35,6 @@ const ContactForm = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                    'x-api-key': apiKey!,
                 },
                 body: JSON.stringify({
                     to: toEmail,
