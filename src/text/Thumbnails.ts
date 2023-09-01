@@ -59,3 +59,13 @@ export const reactProjectThumbnails: ThumbnailProps[] = [
         desc: 'React component storybook demonstrating some components that I built with goals to reuse in different scenarios',
     },
 ]
+
+export const megaProjectThumbnails: ThumbnailProps[] = [
+    {
+        title: 'Trello Clone',
+        imageUrl:
+            'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/trello-clone-thumbnail.png',
+        href: 'http://trello-clone-project.s3-website.ca-central-1.amazonaws.com/',
+        desc: 'A simplified version of Trello',
+    },
+]

@@ -2,6 +2,7 @@ import { Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
 import {
     mediumProjectThumbnails,
+    megaProjectThumbnails,
     reactProjectThumbnails,
     smallProjectThumbnails,
 } from 'text/Thumbnails'
@@ -37,6 +38,16 @@ const ProjectPage: React.FC = () => {
                 </Typography>
                 <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
                     {reactProjectThumbnails.map((tb) => (
+                        <Grid key={tb.title} item>
+                            <Thumbnail {...tb} />
+                        </Grid>
+                    ))}
+                </Grid>
+                <Typography variant="h4" marginTop={4}>
+                    Mega Projects
+                </Typography>
+                <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+                    {megaProjectThumbnails.map((tb) => (
                         <Grid key={tb.title} item>
                             <Thumbnail {...tb} />
                         </Grid>
