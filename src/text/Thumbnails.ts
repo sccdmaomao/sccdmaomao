@@ -1,5 +1,6 @@
 import { type ThumbnailProps } from '../components/Thumbnail'
 
+// thumbnails are screenshot made at 1280 x 720 px
 export const smallProjectThumbnails: ThumbnailProps[] = [
     {
         title: 'Lotto 649 Generator',
