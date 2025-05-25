@@ -9,6 +9,7 @@ import ErrorPage from 'routes/ErrorPage'
 import LandingPage from 'routes/LandingPage'
 import ProjectPage from 'routes/ProjectPage'
 import ResumePage from 'routes/ResumePage'
+import TechnicalBlogPage from 'routes/TechnicalBlogPage'
 import { createGlobalStyle } from 'styled-components'
 
 import { BACKGROUND_COLORS } from './colors'
@@ -27,6 +28,7 @@ export enum ROUTE_PATH {
     RESUME = 'resume',
     CONTACTS = 'contacts',
     PLAYGROUND = 'playground',
+    BLOG = 'blog',
 }
 
 const router = createHashRouter([
@@ -50,6 +52,7 @@ const router = createHashRouter([
                 path: ROUTE_PATH.CONTACTS,
                 element: <ContactsPage />,
             },
+            { path: ROUTE_PATH.BLOG, element: <TechnicalBlogPage /> },
         ],
         errorElement: <ErrorPage />,
     },
