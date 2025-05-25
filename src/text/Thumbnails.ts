@@ -1,6 +1,7 @@
 import { type ThumbnailProps } from '../components/Thumbnail'
 
 // thumbnails are screenshot made at 1280 x 720 px
+// stoired at guohao-public-assets s3 bucket/thumbnails
 export const smallProjectThumbnails: ThumbnailProps[] = [
     {
         title: 'Lotto 649 Generator',
@@ -61,12 +62,19 @@ export const reactProjectThumbnails: ThumbnailProps[] = [
     },
 ]
 
-export const megaProjectThumbnails: ThumbnailProps[] = [
+export const fullStackProjectThumbnails: ThumbnailProps[] = [
     {
         title: 'Trello Clone',
         imageUrl:
             'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/trello-clone-thumbnail.png',
         href: 'http://trello-clone-project.s3-website.ca-central-1.amazonaws.com/',
         desc: 'A simplified version of Trello',
+    },
+    {
+        title: 'Secret Santa',
+        imageUrl:
+            'https://guohao-public-assets.s3.ca-central-1.amazonaws.com/thumbnails/secret-santa-thumbnail.jpg',
+        href: 'http://spa-secret-santa.s3-website.ca-central-1.amazonaws.com/',
+        desc: 'Give a gift to someone anonymously',
     },
 ]
