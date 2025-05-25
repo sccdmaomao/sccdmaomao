@@ -2,9 +2,9 @@ import { BACKGROUND_COLORS } from 'colors'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import { CURRENT_JOB_COMPANY, CURRENT_JOB_TITLE, NAME } from 'text/constants'
 
 import { ROUTE_PATH } from '../AppContainer'
+import { CURRENT_JOB_COMPANY, CURRENT_JOB_TITLE, NAME } from '../constants'
 
 export const NAV_HEIGHT = '8vh'
 

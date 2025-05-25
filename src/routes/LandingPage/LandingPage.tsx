@@ -1,8 +1,9 @@
 import { Paper } from '@mui/material'
 import React from 'react'
+import text from 'routes/LandingPage/text/LandingPageText'
 import styled from 'styled-components'
-import { CURRENT_JOB_TITLE } from 'text/constants'
-import text from 'text/LandingPageText'
+
+import { CURRENT_JOB_TITLE } from '../../constants'
 
 const ContentWrapper = styled.div`
     max-width: 900px;

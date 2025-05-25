@@ -5,9 +5,9 @@ import {
     mediumProjectThumbnails,
     reactProjectThumbnails,
     smallProjectThumbnails,
-} from 'text/Thumbnails'
+} from 'routes/ProjectPage/text/Thumbnails'
 
-import Thumbnail from '../components/Thumbnail'
+import Thumbnail from './components/Thumbnail'
 
 const ProjectPage: React.FC = () => {
     return (

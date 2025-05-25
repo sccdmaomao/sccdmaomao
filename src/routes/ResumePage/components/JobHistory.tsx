@@ -4,11 +4,11 @@ import {
     RightSection,
     SubTitle,
     Title,
-} from 'commonComponents/commonStyles'
+} from 'components/commonStyles'
 import getEmploymentLength from 'helpers/getEmploymentLength'
 import React from 'react'
+import jobText from 'routes/ResumePage/text/JobText'
 import styled from 'styled-components'
-import jobText from 'text/JobText'
 
 const JobDetailList = styled.div`
     display: flex;
