@@ -2,7 +2,7 @@ import { BACKGROUND_COLORS } from 'colors'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-import navText from 'text/NavigationText'
+import { CURRENT_JOB_COMPANY, CURRENT_JOB_TITLE, NAME } from 'text/constants'
 
 import { ROUTE_PATH } from '../AppContainer'
 
@@ -89,10 +89,10 @@ const NavBar: React.FC = () => {
                 <ul>
                     <li>
                         <GuohaoLink to={ROUTE_PATH.ROOT}>
-                            <h3>{navText.name} </h3>
+                            <h3>{NAME} </h3>
                         </GuohaoLink>
                         <span>
-                            {navText.title} @ {navText.company}
+                            {CURRENT_JOB_TITLE} @ {CURRENT_JOB_COMPANY}
                         </span>
                     </li>
                     <SubPageLink

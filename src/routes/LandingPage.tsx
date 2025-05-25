@@ -1,6 +1,7 @@
 import { Paper } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
+import { CURRENT_JOB_TITLE } from 'text/constants'
 import text from 'text/LandingPageText'
 
 const ContentWrapper = styled.div`
@@ -39,7 +40,7 @@ const LandingPage: React.FC = () => {
                     loading="lazy"
                 ></FakeImg>
                 <TextWrapper>
-                    <Title>{text.title}</Title>
+                    <Title>{CURRENT_JOB_TITLE}</Title>
                     <p>{text.introParagraph}</p>
                 </TextWrapper>
             </ContentWrapper>
