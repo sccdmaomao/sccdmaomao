@@ -1,16 +1,34 @@
 const jobText = [
     {
+        jobTitle: 'Principal Frontend Engineer',
+        companyName: 'Autodesk',
+        date: { start: 'April 2024', end: undefined },
+        details: `
+Lead web engineer at Autodesk Build - Forms team.
+- Delivering key features
+- Architectural design/practices for maintainable, scaling code base
+- Addressing high impact customer reported issues
+- Managing tech debts, code modernization
+`,
+        links: [
+            {
+                label: 'Autodesk Construction - Forms',
+                link: 'https://construction.autodesk.com/tools/construction-forms/',
+            },
+        ],
+    },
+    {
         jobTitle: 'Senior Frontend Engineer',
         companyName: 'Autodesk',
-        date: { start: 'Nov 2021', end: undefined },
+        date: { start: 'Nov 2021', end: 'Apr 2024' },
         details: `
 - Fully remote position.
 - Frontend engineering on the Progress Tracking and Assets Tracking products.
 - Design, build, publish quality tracking tools (web application) in the construction solutions field.
-- Mentorship, Agile process, Architecting the web application`,
+- Mentorship, Agile process, Architect the web application`,
         links: [
             {
-                label: 'Assets Tracking',
+                label: 'Autodesk Construction - Progress Tracking, Assets',
                 link: 'https://construction.autodesk.com/tools/construction-asset-management/',
             },
         ],
