@@ -1,14 +1,21 @@
 import { BACKGROUND_COLORS } from 'colors'
+import BlogIcon from 'icons/BlogIcon'
+import ContactIcon from 'icons/ContactIcon'
+import ResumeIcon from 'icons/ResumeIcon'
 import SideProjectIcon from 'icons/SideProjectIcon'
+import ThemeIcon from 'icons/ThemeIcon'
 import React from 'react'
 import styled from 'styled-components'
+
+import { useTheme } from '../theme/ThemeContext'
 
 export const NAV_HEIGHT = '8vh'
 
 const PageRoot = styled.div`
-    background-color: ${BACKGROUND_COLORS.PAGE};
+    background-color: ${({ theme }) => theme.colors.background};
     min-height: 100vh;
     overflow-y: auto;
+    color: ${({ theme }) => theme.colors.text};
 `
 
 const ContentWrapper = styled.div`
@@ -19,7 +26,7 @@ const ContentWrapper = styled.div`
 const Nav = styled.nav`
     padding: 0 6em;
     width: calc(100% - 12em);
-    background-color: ${BACKGROUND_COLORS.NAV};
+    background-color: ${({ theme }) => theme.colors.nav};
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -36,10 +43,10 @@ const Nav = styled.nav`
         & > li {
             user-select: none;
             margin-right: 1em;
-            border-left: 1px solid black;
+            border-left: 1px solid ${({ theme }) => theme.colors.text};
             padding-left: 1em;
             & > a {
-                color: black;
+                color: ${({ theme }) => theme.colors.text};
                 text-decoration: none;
                 cursor: pointer;
             }
@@ -57,6 +64,16 @@ const NavItem = styled.li<{ selected?: boolean }>`
     :hover {
         font-weight: bold;
     }
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+`
+
+const ThemeToggle = styled.li`
+    margin-left: auto !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 `
 
 interface NavBarProps {
@@ -65,6 +82,7 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ children }) => {
     const [activeSection, setActiveSection] = React.useState('home')
+    const { toggleTheme } = useTheme()
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -100,6 +118,7 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
             <Nav>
                 <ul>
                     <NavItem selected={activeSection === 'resume'}>
+                        <ResumeIcon />
                         <a
                             onClick={() => {
                                 scrollToSection('resume')
@@ -119,6 +138,7 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
                         </a>
                     </NavItem>
                     <NavItem selected={activeSection === 'blog'}>
+                        <BlogIcon />
                         <a
                             onClick={() => {
                                 scrollToSection('blog')
@@ -128,6 +148,7 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
                         </a>
                     </NavItem>
                     <NavItem selected={activeSection === 'contacts'}>
+                        <ContactIcon />
                         <a
                             onClick={() => {
                                 scrollToSection('contacts')
@@ -136,6 +157,9 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
                             Contact
                         </a>
                     </NavItem>
+                    <ThemeToggle onClick={toggleTheme}>
+                        <ThemeIcon />
+                    </ThemeToggle>
                 </ul>
             </Nav>
             <ContentWrapper style={{ marginTop: NAV_HEIGHT }}>

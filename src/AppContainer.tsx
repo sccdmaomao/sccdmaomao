@@ -1,21 +1,20 @@
 import './global.css'
 
-import { ThemeProvider } from '@mui/material'
 import NavBar from 'components/NavBar'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
-import { BACKGROUND_COLORS } from './colors'
 import MainPage from './pages/MainPage'
-import theme from './theme'
+import { ThemeProvider } from './theme/ThemeContext'
 
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Montserrat', sans-serif;
-    background-color: ${BACKGROUND_COLORS.PAGE};
+    background-color: ${({ theme }) => theme.colors.background};
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   html {
@@ -25,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
 const AppContainer: React.FC = () => {
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
             <GlobalStyle />
             <NavBar>
                 <MainPage />
