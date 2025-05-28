@@ -4,6 +4,7 @@ import { IconButton, Paper, Typography } from '@mui/material'
 import React from 'react'
 
 import ContactForm from '../components/ContactForm'
+import Container from '../components/Container'
 
 type Site = 'linkedIn' | 'github'
 
@@ -20,28 +21,30 @@ const ContactsSection = () => {
     }
 
     return (
-        <Paper elevation={0}>
-            <Typography variant="h4" marginTop={4}>
-                Contact Me
-            </Typography>
-            <div>
-                <IconButton
-                    onClick={() => {
-                        handleSocialClick('linkedIn')
-                    }}
-                >
-                    <LinkedInIcon />
-                </IconButton>
-                <IconButton
-                    onClick={() => {
-                        handleSocialClick('github')
-                    }}
-                >
-                    <GitHubIcon />
-                </IconButton>
-            </div>
-            <ContactForm />
-        </Paper>
+        <Container>
+            <Paper elevation={0}>
+                <Typography variant="h4" marginTop={4}>
+                    Contact Me
+                </Typography>
+                <div>
+                    <IconButton
+                        onClick={() => {
+                            handleSocialClick('linkedIn')
+                        }}
+                    >
+                        <LinkedInIcon />
+                    </IconButton>
+                    <IconButton
+                        onClick={() => {
+                            handleSocialClick('github')
+                        }}
+                    >
+                        <GitHubIcon />
+                    </IconButton>
+                </div>
+                <ContactForm />
+            </Paper>
+        </Container>
     )
 }
 
