@@ -1,26 +1,17 @@
 import { BACKGROUND_COLORS } from 'colors'
 import SideProjectIcon from 'icons/SideProjectIcon'
 import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
-
-import { ROUTE_PATH } from '../AppContainer'
-import { CURRENT_JOB_COMPANY, CURRENT_JOB_TITLE, NAME } from '../constants'
 
 export const NAV_HEIGHT = '8vh'
 
 const PageRoot = styled.div`
     background-color: ${BACKGROUND_COLORS.PAGE};
-    max-height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
 `
 
-const ScrollWrapper = styled.div`
-    overflow: auto;
-    height: calc(100vh - ${NAV_HEIGHT});
-`
-
-const OutletWrapper = styled.div`
+const ContentWrapper = styled.div`
     padding: 0 6em;
     height: 100%;
 `
@@ -29,6 +20,9 @@ const Nav = styled.nav`
     padding: 0 6em;
     width: calc(100% - 12em);
     background-color: ${BACKGROUND_COLORS.NAV};
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 
     & > ul {
         height: ${NAV_HEIGHT};
@@ -37,6 +31,7 @@ const Nav = styled.nav`
         list-style: none;
         display: flex;
         align-items: center;
+        justify-content: center;
 
         & > li {
             user-select: none;
@@ -46,82 +41,106 @@ const Nav = styled.nav`
             & > a {
                 color: black;
                 text-decoration: none;
+                cursor: pointer;
             }
             white-space: nowrap;
         }
-
         & > li:first-child {
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-        /* No border style for First and Second route link */
-        & > li:first-child,
-        li:nth-child(2) {
             border: none;
             padding-left: 0;
         }
     }
 `
 
-const GuohaoLink = styled(Link)`
-    margin-right: 1em;
-    > h3 {
-        display: inline-block;
-        font-size: 1.5em;
-        margin: 0;
-    }
-`
-
-const SubPageLink = styled.li<{ selected?: boolean }>`
+const NavItem = styled.li<{ selected?: boolean }>`
     font-weight: ${({ selected }) => selected && 'bold'};
     :hover {
         font-weight: bold;
     }
 `
 
-const NavBar: React.FC = () => {
-    const { pathname } = useLocation()
+interface NavBarProps {
+    children: React.ReactNode
+}
+
+const NavBar: React.FC<NavBarProps> = ({ children }) => {
+    const [activeSection, setActiveSection] = React.useState('home')
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['home', 'resume', 'projects', 'blog', 'contacts']
+            const current = sections.find((section) => {
+                const element = document.getElementById(section)
+                if (element) {
+                    const rect = element.getBoundingClientRect()
+                    return rect.top <= 100 && rect.bottom >= 100
+                }
+                return false
+            })
+            if (current) {
+                setActiveSection(current)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     return (
         <PageRoot>
             <Nav>
                 <ul>
-                    <li>
-                        <GuohaoLink to={ROUTE_PATH.ROOT}>
-                            <h3>{NAME} </h3>
-                        </GuohaoLink>
-                        <span>
-                            {CURRENT_JOB_TITLE} @ {CURRENT_JOB_COMPANY}
-                        </span>
-                    </li>
-                    <SubPageLink
-                        selected={pathname.includes(ROUTE_PATH.RESUME)}
-                    >
-                        <Link to={ROUTE_PATH.RESUME}>Resume</Link>
-                    </SubPageLink>
-                    <SubPageLink
-                        selected={pathname.includes(ROUTE_PATH.PROJECTS)}
-                    >
+                    <NavItem selected={activeSection === 'resume'}>
+                        <a
+                            onClick={() => {
+                                scrollToSection('resume')
+                            }}
+                        >
+                            Resume
+                        </a>
+                    </NavItem>
+                    <NavItem selected={activeSection === 'projects'}>
                         <SideProjectIcon />
-                        <Link to={ROUTE_PATH.PROJECTS}>Side Projects</Link>
-                    </SubPageLink>
-                    <SubPageLink selected={pathname.includes(ROUTE_PATH.BLOG)}>
-                        <Link to={ROUTE_PATH.BLOG}>Blogs</Link>
-                    </SubPageLink>
-                    <SubPageLink
-                        selected={pathname.includes(ROUTE_PATH.CONTACTS)}
-                    >
-                        <Link to={ROUTE_PATH.CONTACTS}>Contact</Link>
-                    </SubPageLink>
+                        <a
+                            onClick={() => {
+                                scrollToSection('projects')
+                            }}
+                        >
+                            Side Projects
+                        </a>
+                    </NavItem>
+                    <NavItem selected={activeSection === 'blog'}>
+                        <a
+                            onClick={() => {
+                                scrollToSection('blog')
+                            }}
+                        >
+                            Blogs
+                        </a>
+                    </NavItem>
+                    <NavItem selected={activeSection === 'contacts'}>
+                        <a
+                            onClick={() => {
+                                scrollToSection('contacts')
+                            }}
+                        >
+                            Contact
+                        </a>
+                    </NavItem>
                 </ul>
             </Nav>
-            <ScrollWrapper>
-                <OutletWrapper>
-                    <Outlet />
-                </OutletWrapper>
-            </ScrollWrapper>
+            <ContentWrapper style={{ marginTop: NAV_HEIGHT }}>
+                {children}
+            </ContentWrapper>
         </PageRoot>
     )
 }

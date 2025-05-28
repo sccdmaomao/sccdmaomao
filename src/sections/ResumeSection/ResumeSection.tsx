@@ -1,10 +1,11 @@
 import { Paper } from '@mui/material'
 import React from 'react'
-import Education from 'routes/ResumePage/components/Education'
-import JobHistory from 'routes/ResumePage/components/JobHistory'
-import ResumeSection from 'routes/ResumePage/components/ResumeSection'
-import SkillSummary from 'routes/ResumePage/components/SkillSummary'
 import styled from 'styled-components'
+
+import Education from './components/Education'
+import JobHistory from './components/JobHistory'
+import ResumeSection from './components/ResumeSection'
+import SkillSummary from './components/SkillSummary'
 
 const ContentWrapper = styled.div`
     width: 100%;

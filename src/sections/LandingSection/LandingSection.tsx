@@ -1,9 +1,9 @@
 import { Paper } from '@mui/material'
 import React from 'react'
-import text from 'routes/LandingPage/text/LandingPageText'
 import styled from 'styled-components'
 
-import { CURRENT_JOB_TITLE } from '../../constants'
+import { CURRENT_JOB_COMPANY, CURRENT_JOB_TITLE } from '../../constants'
+import text from './text/LandingPageText'
 
 const ContentWrapper = styled.div`
     max-width: 900px;
@@ -43,7 +43,9 @@ const LandingPage: React.FC = () => {
                     loading="lazy"
                 />
                 <TextWrapper>
-                    <Title>{CURRENT_JOB_TITLE}</Title>
+                    <Title>
+                        {CURRENT_JOB_TITLE} @ {CURRENT_JOB_COMPANY}
+                    </Title>
                     <p>{text.introParagraph}</p>
                 </TextWrapper>
             </ContentWrapper>

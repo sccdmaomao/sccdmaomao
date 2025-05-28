@@ -6,8 +6,9 @@ import {
     Title,
 } from 'components/commonStyles'
 import React from 'react'
-import educationText from 'routes/ResumePage/text/EducationText'
 import styled from 'styled-components'
+
+import educationText from '../text/EducationText'
 
 const SectionWrapper = styled.div`
     display: flex;

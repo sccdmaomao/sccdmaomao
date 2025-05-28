@@ -1,13 +1,13 @@
 import { Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
+
+import Thumbnail from './components/Thumbnail'
 import {
     fullStackProjectThumbnails,
     mediumProjectThumbnails,
     reactProjectThumbnails,
     smallProjectThumbnails,
-} from 'routes/ProjectPage/text/Thumbnails'
-
-import Thumbnail from './components/Thumbnail'
+} from './text/Thumbnails'
 
 const ProjectPage: React.FC = () => {
     return (
