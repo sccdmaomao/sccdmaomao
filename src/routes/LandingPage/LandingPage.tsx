@@ -10,6 +10,8 @@ const ContentWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 `
 
 const TextWrapper = styled.div``
@@ -39,7 +41,7 @@ const LandingPage: React.FC = () => {
                 <FakeImg
                     src="https://guohao-public-assets.s3.ca-central-1.amazonaws.com/images/guohao-profile-pic.jpg"
                     loading="lazy"
-                ></FakeImg>
+                />
                 <TextWrapper>
                     <Title>{CURRENT_JOB_TITLE}</Title>
                     <p>{text.introParagraph}</p>

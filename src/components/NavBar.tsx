@@ -1,4 +1,5 @@
 import { BACKGROUND_COLORS } from 'colors'
+import SideProjectIcon from 'icons/SideProjectIcon'
 import React from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
@@ -103,6 +104,7 @@ const NavBar: React.FC = () => {
                     <SubPageLink
                         selected={pathname.includes(ROUTE_PATH.PROJECTS)}
                     >
+                        <SideProjectIcon />
                         <Link to={ROUTE_PATH.PROJECTS}>Side Projects</Link>
                     </SubPageLink>
                     <SubPageLink selected={pathname.includes(ROUTE_PATH.BLOG)}>

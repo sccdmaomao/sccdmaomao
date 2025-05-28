@@ -1,4 +1,9 @@
 const TechnicalBlogPage = () => {
+    /**
+     * topic: styled-components vs tailwindcss
+     *
+     * topic: webpack vs rsbuild
+     */
     return (
         <div>
             <h1>Technical Blog</h1>

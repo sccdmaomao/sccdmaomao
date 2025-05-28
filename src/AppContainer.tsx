@@ -57,7 +57,6 @@ const router = createHashRouter([
         errorElement: <ErrorPage />,
     },
 ])
-
 const AppContainer: React.FC = () => {
     return (
         <>
