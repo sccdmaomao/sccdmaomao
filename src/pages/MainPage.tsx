@@ -2,7 +2,6 @@ import { Box } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 
-import ContactsPage from '../sections/ContactsSection'
 import LandingPage from '../sections/LandingSection'
 import ProjectPage from '../sections/ProjectSection'
 import ResumePage from '../sections/ResumeSection'
@@ -31,10 +30,6 @@ const MainPage: React.FC = () => {
             <Section id="blog">
                 <TechnicalBlogPage />
             </Section>
-
-            {/* <Section id="contacts">
-                <ContactsPage />
-            </Section> */}
         </Box>
     )
 }

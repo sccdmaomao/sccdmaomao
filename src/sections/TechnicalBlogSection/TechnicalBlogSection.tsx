@@ -1,7 +1,6 @@
 import { Paper, Typography } from '@mui/material'
-import React from 'react'
 
-import Container from '../components/Container'
+import Container from '../../components/Container'
 
 /*
 topics: 
@@ -13,6 +12,9 @@ const TechnicalBlogSection = () => {
     return (
         <Container>
             <Paper elevation={0}>
+                <Typography variant="h3" component="h3" gutterBottom sx={{ textAlign: 'center', marginBottom: 6 }}>
+                    Technical Blog
+                </Typography>
                 <Typography variant="h4" marginTop={4}>
                     Coming Soon...
                 </Typography>

@@ -1,4 +1,4 @@
-import { BACKGROUND_COLORS } from 'colors'
+import { useScrollToSection } from 'hooks/useScrollToSection'
 import BlogIcon from 'icons/BlogIcon'
 import ContactIcon from 'icons/ContactIcon'
 import ResumeIcon from 'icons/ResumeIcon'
@@ -83,6 +83,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ children }) => {
     const [activeSection, setActiveSection] = React.useState('home')
     const { toggleTheme } = useTheme()
+    const scrollToSection = useScrollToSection()
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -105,13 +106,6 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
 
     return (
         <PageRoot>
@@ -150,8 +144,10 @@ const NavBar: React.FC<NavBarProps> = ({ children }) => {
                     <NavItem selected={activeSection === 'contacts'}>
                         <ContactIcon />
                         <a
-                            onClick={() => {
-                                scrollToSection('contacts')
+                            href="mailto:sccdmaomao@hotmail.com"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                window.location.href = 'mailto:sccdmaomao@hotmail.com'
                             }}
                         >
                             Contact

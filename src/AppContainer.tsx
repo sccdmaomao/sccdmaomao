@@ -1,8 +1,9 @@
 import './global.css'
 
+import Footer from 'components/Footer'
 import NavBar from 'components/NavBar'
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import MainPage from './pages/MainPage'
 import { ThemeProvider } from './theme/ThemeContext'
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     overflow-x: hidden;
     color: ${({ theme }) => theme.colors.text};
+    min-height: 100vh;
   }
 
   html {
@@ -22,13 +24,28 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const AppWrapper = styled.div`
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+`
+
+const MainContent = styled.main`
+    flex: 1;
+`
+
 const AppContainer: React.FC = () => {
     return (
         <ThemeProvider>
             <GlobalStyle />
-            <NavBar>
-                <MainPage />
-            </NavBar>
+            <AppWrapper>
+                <MainContent>
+                    <NavBar>
+                        <MainPage />
+                    </NavBar>
+                </MainContent>
+                <Footer />
+            </AppWrapper>
         </ThemeProvider>
     )
 }

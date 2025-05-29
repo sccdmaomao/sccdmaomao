@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material'
+import { Paper, Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -53,7 +53,7 @@ const ProfileImage = styled.img`
 const LandingSection: React.FC = () => {
     return (
         <Container>
-            <Paper elevation={0}>
+            <Paper elevation={0} sx={{ paddingTop: 4 }}>
                 <ContentWrapper>
                     <ProfileImage
                         src="https://guohao-public-assets.s3.ca-central-1.amazonaws.com/images/guohao-profile-pic.jpg"

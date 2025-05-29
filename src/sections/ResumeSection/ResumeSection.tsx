@@ -1,4 +1,4 @@
-import { Paper } from '@mui/material'
+import { Paper, Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -25,6 +25,9 @@ const ResumeSection: React.FC = () => {
         <Container>
             <Paper elevation={0} sx={{ py: 4 }}>
                 <ContentWrapper>
+                    <Typography variant="h3" component="h3" gutterBottom sx={{ textAlign: 'center', marginBottom: 6 }}>
+                        Skills & Career 
+                    </Typography>
                     <ResumeSectionComponent
                         sectionTitle={'Skills and Expertise'}
                         styles={{ flexDirection: 'column' }}

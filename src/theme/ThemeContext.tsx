@@ -22,11 +22,37 @@ export const useTheme = () => {
 
 const createMuiTheme = (themeMode: ThemeMode) => {
     return createTheme({
+        typography: {
+            h1: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 700,
+            },
+            h2: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 700,
+            },
+            h3: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 600,
+            },
+            h4: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 500,
+            },
+            h5: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 500,
+            },
+            h6: {
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 500,
+            },
+        },
         palette: {
             mode: themeMode,
             background: {
                 default: themes[themeMode].colors.background,
-                paper: themes[themeMode].colors.nav,
+                paper: themes[themeMode].colors.background,
             },
             text: {
                 primary: themes[themeMode].colors.text,
