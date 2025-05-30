@@ -1,5 +1,6 @@
 import { Grid, Typography } from '@mui/material'
 import React from 'react'
+
 import { type ThumbnailProps } from './Thumbnail'
 import Thumbnail from './Thumbnail'
 
@@ -29,4 +30,4 @@ const ProjectGrid: React.FC<ProjectGridProps> = ({ title, projects }) => {
     )
 }
 
-export default ProjectGrid 
+export default ProjectGrid
