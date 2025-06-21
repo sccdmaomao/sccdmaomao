@@ -1,4 +1,5 @@
 import { Box } from '@mui/material'
+import usePageViewTracking from 'hooks/usePageViewTracking'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,6 +14,7 @@ const Section = styled.section`
 `
 
 const MainPage: React.FC = () => {
+    usePageViewTracking()
     return (
         <Box>
             <Section id="home">

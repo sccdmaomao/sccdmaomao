@@ -2,7 +2,9 @@ import './global.css'
 
 import Footer from 'components/Footer'
 import NavBar from 'components/NavBar'
+import usePageTracking from 'hooks/usePageTracking'
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import MainPage from './pages/MainPage'
@@ -34,19 +36,27 @@ const MainContent = styled.main`
     flex: 1;
 `
 
+const PageTracker: React.FC = () => {
+    usePageTracking()
+    return null
+}
+
 const AppContainer: React.FC = () => {
     return (
-        <ThemeProvider>
-            <GlobalStyle />
-            <AppWrapper>
-                <MainContent>
-                    <NavBar>
-                        <MainPage />
-                    </NavBar>
-                </MainContent>
-                <Footer />
-            </AppWrapper>
-        </ThemeProvider>
+        <BrowserRouter>
+            <PageTracker />
+            <ThemeProvider>
+                <GlobalStyle />
+                <AppWrapper>
+                    <MainContent>
+                        <NavBar>
+                            <MainPage />
+                        </NavBar>
+                    </MainContent>
+                    <Footer />
+                </AppWrapper>
+            </ThemeProvider>
+        </BrowserRouter>
     )
 }
 
