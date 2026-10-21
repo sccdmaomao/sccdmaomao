@@ -25,6 +25,7 @@ export default defineConfig({
         template: './public/index.html',
     },
     output: {
+        assetPrefix: './',
         distPath: {
             root: 'build',
             js: 'js',
