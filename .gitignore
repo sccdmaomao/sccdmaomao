@@ -18,3 +18,5 @@ build
 stats
 storybook-static
 ts-build
+# Source theme augmentation is required by clean TypeScript builds.
+!src/theme/styled.d.ts
